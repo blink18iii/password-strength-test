@@ -12,16 +12,7 @@ export class PasswordStrengthComponent implements OnInit {
   @ViewChild('input') inputElement: ElementRef;
   constructor() {}
 
-  ngOnInit(): void {
-    this.inputElement.nativeElement.addEventListener('touchstart', () => {
-      // Get the container element
-      const container = this.inputElement.nativeElement.parentElement;
-
-      // Scale the container to fullscreen
-      container.style.width = '100%';
-      container.style.height = '100%';
-    });
-  }
+  ngOnInit(): void {}
 
   onKey(event: any) {
     const inputValue = event.target.value;

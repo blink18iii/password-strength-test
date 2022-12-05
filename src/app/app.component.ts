@@ -7,7 +7,6 @@ import { Component,ViewChild,ElementRef,Renderer2 } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent  {
-  // signupForm: FormGroup;
   password = '';
   
 }
