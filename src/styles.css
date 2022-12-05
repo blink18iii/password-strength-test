@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+:root {
+    --base: #55b9f3;
+    --lighten: #35bced;
+    --darken: #359bd5;
+    --white: #c8deeb;
+    --shadow: 6px 6px 12px var(--darken), -6px -6px 12px var(--lighten);
+    --inset: inset 6px 6px 12px var(--darken), inset -6px -6px 12px var(--lighten);
+  }
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, var(--lighten), var(--darken));
+  overflow: hidden;
+}

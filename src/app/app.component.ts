@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild,ElementRef,Renderer2 } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'password-strength-test';
+export class AppComponent  {
+  // signupForm: FormGroup;
+  password = '';
+  
 }
