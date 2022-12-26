@@ -14,7 +14,14 @@ export class PasswordStrengthComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onKey(event: any) {
+  onKey(event: KeyboardEvent) {
+    if (
+      !event ||
+      !event.target ||
+      !(event.target instanceof HTMLInputElement)
+    ) {
+      return;
+    }
     const inputValue = event.target.value;
     const inputLength = inputValue.length;
 
