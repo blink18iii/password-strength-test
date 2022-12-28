@@ -15,11 +15,11 @@ export class PasswordStrengthComponent implements OnInit {
   ngOnInit(): void {
     this.calculateStrength();
   }
-  ngOnChanges() {
+  ngOnChanges(): void {
     this.calculateStrength();
   }
 
-  calculateStrength() {
+  calculateStrength(): void {
     const inputValue = this.password;
     const inputLength = inputValue.length;
 

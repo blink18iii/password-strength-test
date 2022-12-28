@@ -22,7 +22,7 @@ export class InputComponent implements ControlValueAccessor {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit(): void {}
 
   writeValue(obj: any): void {
     this.passwordControl.setValue(obj);
