@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-password-strength',
@@ -6,23 +6,21 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./password-strength.component.scss'],
 })
 export class PasswordStrengthComponent implements OnInit {
+  @Input() password: string = '';
   easyColor: string = 'grey';
   mediumColor: string = 'grey';
   strongColor: string = 'grey';
-  @ViewChild('input') inputElement: ElementRef;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.calculateStrength();
+  }
+  ngOnChanges() {
+    this.calculateStrength();
+  }
 
-  onKey(event: KeyboardEvent) {
-    if (
-      !event ||
-      !event.target ||
-      !(event.target instanceof HTMLInputElement)
-    ) {
-      return;
-    }
-    const inputValue = event.target.value;
+  calculateStrength() {
+    const inputValue = this.password;
     const inputLength = inputValue.length;
 
     const easyPassword = /^[a-z]+$|^\d+$|^[@$!%*#?&]+$/i;

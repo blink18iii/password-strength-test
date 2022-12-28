@@ -1,27 +1,37 @@
-# PasswordStrengthTest
+ng new password-strength-test
+cd password-strength-test
+npm i
+npm install --save bootstrap
+npm install @angular/forms @angular/common
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.1.
+<!-- Add the following styles to the styles.scss file -->
+@import "node_modules/bootstrap/scss/bootstrap";
 
-## Development server
+<!-- Import the ReactiveFormsModule in the root module (app.module.ts) to enable reactive forms in the app. -->
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
 
-## Build
+<!-- Create a new component for input, using ControlValueAccessor. This component will be used to create a custom form control. -->
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ng generate component input
 
-## Running unit tests
+<!-- Create a new component for the password strength bar. This component will be used to display the password strength. -->
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ng generate component password-strength-meter
 
-## Running end-to-end tests
+<!-- create input html -->
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

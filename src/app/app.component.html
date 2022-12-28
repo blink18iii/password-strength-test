@@ -1,7 +1,8 @@
 <div class="container">
   <div class="row">
-    <div>
-      <app-password-strength></app-password-strength>
+    <div class="ui_container">
+      <app-input [formControl]="passwordControl"></app-input>
+      <app-password-strength [password]="passwordControl.value || ''"></app-password-strength>
     </div>
   </div>
 </div>
